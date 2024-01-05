@@ -1,0 +1,30 @@
+.sectionform {
+    width: 100vw;
+    min-height: 83vh;
+    background: url(/assets/img/background_register.png) no-repeat center;
+    background-size: cover;
+    /* transform: rotateY(180deg); */
+    border-radius: 5px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+
+}
+
+.boxform{
+    width: 450px;
+    min-height: 530px;
+    background-color: white ;
+    border: 1px solid  rgba(255, 255, 255, 0.18);
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(10px); */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+}
