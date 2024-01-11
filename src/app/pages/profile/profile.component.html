@@ -1,0 +1,40 @@
+
+<section id="profile">
+
+    <div class="container">
+        <div class="row">
+            <div class="col" id="cardForm">
+                    <div class="datos">
+                        <img src="{{user.photo}}" alt="" srcset="">
+                        <p class="titleName">Rubén Vera Gómez</p>
+                        <div class="areatext">
+                            <p>Nombre</p> 
+                            <span>{{user.name}}</span>
+                            <p>Apellido</p> 
+                            <span>{{user.last_name}}</span>
+                            <p>Correo</p> 
+                            <span>{{user.email}}</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Editar Datos</h3>
+                        <div class="formModified">
+                            <label for="">Nombre</label>
+                            <input input="text" id="nombre" name="nombre" #inputName >
+                            <label for="">Apellidos</label>
+                            <input Type="text" id="Apellido" name="Apellido" #inputLastName>
+                            <label for="">Email</label>
+                            <input Type="email" id="Email" name="Email" #inputEmail>
+                            <label for="">Link</label>
+                            <input Type="text" id="url" name="url" #inputUrl>
+                            <button (click)="changeName(inputName,inputLastName,inputEmail,inputUrl)" type="button" class="btn btn-success fs-6 text">Modificar</button>
+                        </div>
+                    </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+</section>

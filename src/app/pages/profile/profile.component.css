@@ -1,0 +1,76 @@
+#profile{
+    min-height: 83vh;
+    min-width: 100vw;
+    min-height: 83vh;
+    background: url(https://img.freepik.com/fotos-premium/fondo-papel-blanco-arte_35956-2535.jpg?w=2000) no-repeat center;
+    background-size: cover;
+    padding: 120px;
+}
+
+
+#cardForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    
+    /* flex-wrap: wrap; */
+    /* gap: 0px 50px; */
+    /* background-color: whitesmoke; */
+    border-radius: 60px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    /* align-items: center; */
+    
+}
+
+.areatext{
+    padding-top: 10px;
+    width: 200px;
+}
+
+p{
+    font-weight: bold;
+    border-bottom: 1px solid blueviolet;
+    margin-bottom: 0px;
+
+}
+
+img{
+    width: 40%;
+    margin-bottom: 30px;
+    
+}
+
+.titleName{
+    font-weight: bold;
+    /* text-align: center; */
+    border-bottom: 0px;
+    font-size: 24px;
+}
+
+.formModified{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 5px;
+    border: 2px solid #b3b3b3;
+    border-radius: 15px;
+    outline-style: none;
+    background-color: transparent;
+    width: 400px;
+}
+
+input::placeholder{
+    color: rgba(255, 255, 255, 0.635);
+
+}
+

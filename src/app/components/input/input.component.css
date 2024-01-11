@@ -1,11 +1,11 @@
 input {
     margin-bottom: 15px;
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 2px solid #b3b3b3;
     border-radius: 15px;
     outline-style: none;
     background-color: transparent;
-    width: 100%;
+    width: 400px;
 }
 
 input::placeholder{
