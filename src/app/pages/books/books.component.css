@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.section{
+    min-height: 83vh;
+    min-width: 100vw;
+    min-height: 83vh;
+    background: url(https://images.unsplash.com/photo-1527176930608-09cb256ab504?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center;
+    background-size: cover;
+    padding-top: 120px;
+}
+
+.btnComprar{
+    background: red;
+    width: 100PX;
+    min-height: 40PX;
+    border-radius: 10PX;
+    color: white;
+    font-weight: bold;
+    border: 0PX;
+}
+
+.btneven{
+    background: blue;
+    width: 100PX;
+    min-height: 40PX;
+    border-radius: 10PX;
+    color: white;
+    font-weight: bold;
+    border: 0PX;
+}
+
+.insertBook{
+    position: fixed;
+    bottom: 130px;
+    right: 400px;
+    z-index: 1111;
+    max-width: 65vw;
+    height: 80px;
+    background-color: black;
+    /* border: 1px solid #00FFA1; */
+    /* border-radius: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 35px -15px rgba(189,189,189,1); 
+    gap: 0px 15px;
+
+}
+
+.input{
+    text-decoration: none;
+    background-color: black;
+    border: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.584);
+    outline: none;
+    color: rgba(255, 255, 255, 0.849);
+    width: 159px;
+}
