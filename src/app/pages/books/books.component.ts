@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Book } from '../../models/book';
 import { CommonModule } from '@angular/common';
 import { RefPipe } from '../../pipes/ref.pipe';
+import { CardComponent } from '../../components/card/card.component';
 
 @Component({
   selector: 'app-books',
   standalone: true,
-  imports: [CommonModule,RefPipe],
+  imports: [CommonModule,RefPipe, CardComponent],
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
@@ -19,7 +20,7 @@ export class BooksComponent {
       type : 'Fantasia',
       author : 'Ken Follet',
       price : 24,
-      photo : 'https://m.media-amazon.com/images/I/91G5zRD4wDL._AC_UF1000,1000_QL80_.jpg',
+      photo : 'https://m.media-amazon.com/images/I/91G5zRD4wDL._AC_UF1000,1000_QL80_.jpg'
     },
     {
       id_book : 2,
@@ -28,7 +29,7 @@ export class BooksComponent {
       type : 'Drama',
       author : 'Mikel Santiago',
       price : 30,
-      photo : 'https://imagessl8.casadellibro.com/a/l/s7/18/9788466677318.webp',
+      photo : 'https://imagessl8.casadellibro.com/a/l/s7/18/9788466677318.webp'
     },
     {
         id_book : 3,
@@ -37,7 +38,7 @@ export class BooksComponent {
         type : 'Asesinatos',
         author : 'Jorge I Aguadero',
         price : 20.80,
-        photo : 'https://imagessl0.casadellibro.com/a/l/s7/40/9788466676540.webp',
+        photo : 'https://imagessl0.casadellibro.com/a/l/s7/40/9788466676540.webp'
     },
     
 
@@ -54,6 +55,11 @@ export class BooksComponent {
         photo : link.value,
     }
     this.book.push(newBook);
+  }
+
+  public getDataCard(id : number){
+    const search = this.book.findIndex(book => book.id_book === id);
+    this.book.splice(search, 1);
   }
 
 }

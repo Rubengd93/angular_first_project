@@ -1,0 +1,16 @@
+.btnComprar{
+    background: red;
+    width: 100PX;
+    min-height: 40PX;
+    border-radius: 10PX;
+    color: white;
+    font-weight: bold;
+    border: 0PX;
+}
+
+#delete{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    border: 1px solid gray;
+}

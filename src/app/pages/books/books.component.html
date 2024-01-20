@@ -4,26 +4,9 @@
           
             
                 @for(library of book; track library.id_book; let i = $index; let even = $even;){
-                  <div class="col-md"> 
-                        <div class="card mb-4" style="max-width: 640px;">
-                            <div class="row g-3">
-                              <div class="col-md-4">
-                                <img src="{{library.photo}}" class="img-fluid rounded-start" alt="...">
-                              </div>
-                              <div class="col-md-8">
-                                <div class="card-body">
-                                  <h5 class="card-title">{{i}} - {{library.title}}</h5>
-                                  <p class="card-text">{{library.id_book | ref}}</p>
-                                  <p class="card-text">{{library.type}}</p>
-                                  <p class="card-text"><small class="text-body-secondary">Price: {{library.price}} €</small></p>
-                                  <p class="card-text"><small class="text-body-secondary">Author: {{library.author}}</small></p>
-                                  <button [ngClass]="{'btneven' : even, 'btnComprar': !even }" type="button" class="btnComprar">Comprar</button>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-                    
+                  <div class="col">
+                    <app-card (deleteCard)="getDataCard($event)" [photo]="library.photo" [id_book]="library.id_book" [title]="library.title" [type]="library.type" [author]="library.author" [price]="library.price" ></app-card>                 
+                  </div>
                 }@empty {
                     <div class="alert alert-danger d-flex align-items-center" role="alert">
                         <div>
