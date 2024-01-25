@@ -1,0 +1,39 @@
+<section class="section">
+
+            <div>
+                <h2>Añade tu libro</h2>
+            </div>    
+
+                
+
+            <div class="col-md-2 text-center">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Id" #id>
+                    <label for="floatingInput">Id</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Link Photo" #link>
+                    <label for="floatingInput">Link Foto</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Title" #title>
+                    <label for="floatingInput">Titulo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Type" #type>
+                    <label for="floatingInput">Tipo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Precio" #price>
+                    <label for="">Precio</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="floatingInput" placeholder="Autor" #autor>
+                    <label for="floatingInput">Autor</label>
+                </div>
+                <button (click)="addBook(id,link,title,type,price,autor)" type="button" class="btn btn-success">AÑADIR LIBRO</button>
+
+            </div>
+
+
+</section>

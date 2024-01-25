@@ -9,7 +9,18 @@
     min-height: 83vh;
     background: url(https://images.unsplash.com/photo-1527176930608-09cb256ab504?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center;
     background-size: cover;
-    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px 30px;
+}
+
+.title{
+    min-width: 100vw;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-top: 30px;
 }
 
 .btnComprar{
@@ -58,4 +69,24 @@
     outline: none;
     color: rgba(255, 255, 255, 0.849);
     width: 159px;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+
+}
+
+
+.boxform{
+min-width: 100vw;
+margin: 0px;
+}
+
+.bucle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.section{
+    min-height: 83vh;
+    min-width: 100vw;
+    min-height: 83vh;
+    background: url(https://images.pling.com/img/00/00/62/69/92/1720219/royalty-free-background-image-171.jpg) no-repeat center;
+    background-size: cover;
+    /* padding-top: 120px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    padding-bottom: 30px;
+    font-size: 40px;
+}

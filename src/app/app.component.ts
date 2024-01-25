@@ -8,12 +8,13 @@ import { FormRegisterComponent } from './components/form-register/form-register.
 import { RegisterComponent } from './pages/register/register.component';
 import { InputComponent } from './components/input/input.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HomeComponent,ProfileComponent, FormRegisterComponent, RegisterComponent, InputComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, HomeComponent,ProfileComponent, FormRegisterComponent, RegisterComponent, InputComponent, AddBookComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

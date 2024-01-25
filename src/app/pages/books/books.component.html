@@ -1,34 +1,31 @@
 <section class="section">
-    <div class="container-fluid">
-        <div class="row">
-          
-            
-                @for(library of book; track library.id_book; let i = $index; let even = $even;){
-                  <div class="col">
-                    <app-card (deleteCard)="getDataCard($event)" [photo]="library.photo" [id_book]="library.id_book" [title]="library.title" [type]="library.type" [author]="library.author" [price]="library.price" ></app-card>                 
-                  </div>
-                }@empty {
-                    <div class="alert alert-danger d-flex align-items-center" role="alert">
-                        <div>
-                          La libreria esta vacia. Vuelve más tarde                        
-                        </div>
-                    </div>
-                }
-                
 
-               
-        </div>
-
-        <div class="row">
-          <div class="insertBook">
-                <input id="id" class="input" type="text" placeholder="ID" #id>
-                <input id="link" class="input" type="text" placeholder="Link foto" #link>
-                <input id="title" class="input" type="text" placeholder="Título" #title>
-                <input id="genre" class="input" type="text" placeholder="Tipo" #type>
-                <input id="Year" class="input" type="text" placeholder="Precio" #price>
-                <input id="link" class="input" type="text" placeholder="Autor" #autor>
-                <button (click)="addBook(id,link,title,type,price,autor)" id="add" class="btnComprar" click="" type="submit">AÑADIR</button>
-            </div>
-        </div>
+<div class="title">
+  <h2>Libros disponibles</h2>
+  <div class="form">
+    <div>
+      <label for="inputPassword2" class="visually-hidden"></label>
+      <input type="number" class="form-control"  placeholder="Introducir Libro" #id>
     </div>
+    <div>
+      <button type="button" class="btn btn-primary mb-3" (click)="getBook(id)">Buscar</button>
+    </div>
+  </div>
+</div>
+
+
+  @for(library of books; track library.id_book; let i = $index; let even = $even;){
+    <div class="bucle">
+      <app-card (deleteCard)="getDataCard($event)" [photo]="library.photo" [id_book]="library.id_book" [title]="library.title" [type]="library.type" [author]="library.author" [price]="library.price" ></app-card>                 
+    </div>
+  }@empty {
+      <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <div>
+          La libreria esta vacia. Vuelve más tarde                        
+        </div>
+      </div>
+  }
+
+
+
 </section>
