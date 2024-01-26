@@ -3,16 +3,16 @@
     <div class="card mb-4" style="max-width: 640px;">
         <div class="row g-3">
           <div class="col-md-4">
-            <img src="{{photo}}" class="img-fluid rounded-start" alt="..." >
+            <img src="{{book.photo}}" class="img-fluid rounded-start" alt="..." >
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <button type="button" id="delete"  (click)="getIdCard(id_book)" class="btn btn-light">x</button>
-              <h5 class="card-title">{{title}}</h5>
-              <p class="card-text">{{id_book | ref}}</p>
-              <p class="card-text">{{type}}</p>
-              <p class="card-text"><small class="text-body-secondary">Price: {{price | euro}}</small></p>
-              <p class="card-text"><small class="text-body-secondary">Author: {{author}} </small></p>
+              <button type="button" id="delete"  (click)="getIdCard(book.id_book)" class="btn btn-light">x</button>
+              <h5 class="card-title">{{book.title}}</h5>
+              <p class="card-text">{{book.id_book | ref}}</p>
+              <p class="card-text">{{book.type}}</p>
+              <p class="card-text"><small class="text-body-secondary">Price: {{book.price | euro}}</small></p>
+              <p class="card-text"><small class="text-body-secondary">Author: {{book.author}} </small></p>
               <button  type="button" class="btnComprar">Comprar</button>
             </div>
           </div>

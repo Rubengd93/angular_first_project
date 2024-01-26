@@ -12,13 +12,9 @@ import { EuroPipe } from '../../pipes/euro.pipe';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-  @Input() public id_book: number  = Number();
-  @Input() public id_User: number  = Number();
-  @Input() public title: string = "";
-  @Input() public type: string = "";
-  @Input() public author: string = "";
-  @Input() public price: number  = Number() ;
-  @Input() public photo: string = "";
+
+
+  @Input() public book: Book = new Book();
 
   @Output()  deleteCard = new EventEmitter<number>();
 

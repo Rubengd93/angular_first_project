@@ -1,0 +1,71 @@
+
+<div class="formbox">
+    <!-- TEMPLATE DRIVEN -->
+
+    <!-- <div class="title">
+        <h2>Login User</h2>
+    </div>
+    <form #dataForm="ngForm" (ngSubmit)="submit(dataForm.value)" action="">
+
+        <input type="email" name="email" [(ngModel)]="user.email" 
+        placeholder="Email" required email #email="ngModel">
+
+        @if ((email.dirty || email.touched) && email.invalid) {
+
+            @if (email.errors && email.errors['required']) {
+                <div class="error">Obligatorio</div>
+            }
+            @if (email.errors && email.errors['email']) {
+                <div class="error">Incorrecto</div>
+            }
+        }
+
+        <input type="password" name="password" [(ngModel)]="user.password" 
+        placeholder="password"  #password="ngModel" required minlength="3">
+
+        @if ((password.dirty || password.touched) && password.invalid) {
+            @if (password.errors && password.errors['required']) {
+                <div class="error">Obligatoria</div>
+            }
+            @if (password.errors && password.errors['minlength']) {
+                <div class="error">No es valido. Contraseña corta</div>
+            }
+        }
+
+        <button [disabled]="dataForm.invalid" type="submit">Log In</button> 
+
+    </form> -->
+
+    <div class="title">
+        <h2>Login User</h2>
+    </div>
+    <form [formGroup]="formlogin" (ngSubmit)="handlesubmit()">
+
+        <input type="email" name="email" formControlName="email" placeholder="Email">
+        @if ( (formlogin.get('email')?.dirty || formlogin.get('email')?.touched) && formlogin.get('email')?.invalid) {
+            @if ( formlogin.get('email')?.hasError('required') ) {
+                <div class="error">Email Obligatorio</div>
+            }
+            @if (formlogin.get('email')?.hasError('email')) {
+                <div class="error">Formato email incorrecto</div>
+            }
+        }
+
+       
+
+        <input type="password" name="password" formControlName="password" placeholder="password">
+        @if ( (formlogin.get('password')?.dirty || formlogin.get('password')?.touched) && formlogin.get('password')?.invalid) {
+            @if ( formlogin.get('password')?.hasError('required') ) {
+                <div class="error">Contraseña Obligatoria</div>
+            }
+            @if (formlogin.get('password')?.hasError('minlength')) {
+                <div class="error">Introduce mínimo una logitud de 4 carácteres</div>
+            }
+        }
+        
+
+        <button [disabled]="formlogin.invalid"  type="submit">Log In</button> 
+        
+    </form>
+
+</div>

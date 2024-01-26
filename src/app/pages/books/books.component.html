@@ -16,7 +16,7 @@
 
   @for(library of books; track library.id_book; let i = $index; let even = $even;){
     <div class="bucle">
-      <app-card (deleteCard)="getDataCard($event)" [photo]="library.photo" [id_book]="library.id_book" [title]="library.title" [type]="library.type" [author]="library.author" [price]="library.price" ></app-card>                 
+      <app-card [book]="library" (deleteCard)="getDataCard($event)" ></app-card>                 
     </div>
   }@empty {
       <div class="alert alert-danger d-flex align-items-center" role="alert">
