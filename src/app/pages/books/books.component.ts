@@ -17,25 +17,57 @@ export class BooksComponent {
 
   public books : Book[] = [];
   constructor(public readonly booksService: BooksService){
+
+    
+    this.booksService.getAllApi().subscribe((data:any) => {
+      this.books = data;
+      
+    });
+
     
     
   }
 
   ngOnInit():void{
-      this.books = this.booksService.getAll();    
+      // this.books = this.booksService.getAll();  
+      this.books = [];  
   }
 
 
   public getDataCard(id : number){
-    this.booksService.delete(id);
+    // this.booksService.delete(id);
+   
+    this.booksService.deleteBookApi(id).subscribe((data) => {
+      this.booksService.getAllApi().subscribe((data:any) => {
+        this.books = data;
+      });
+    })
+
     
   }
 
-  public getBook(id:HTMLInputElement){
+  // public getBook(id:HTMLInputElement){
+  //   if (id.value == "") {
+  //     this.books = this.booksService.getAll();
+  //   }else{
+  //     this.books = this.booksService.getOne(Number(id.value));
+  //   }
+  // }
+
+    public getBook(id:HTMLInputElement){
     if (id.value == "") {
-      this.books = this.booksService.getAll();
+      this.booksService.getAllApi().subscribe((data:any) => {
+        console.log(data);
+        
+        this.books = data;
+      })
     }else{
-      this.books = this.booksService.getOne(Number(id.value));
+      this.booksService.getOneApi(Number(id.value)).subscribe((data:any) => {
+        console.log(data);
+        
+        this.books = [data];
+      });
     }
   }
+
 }

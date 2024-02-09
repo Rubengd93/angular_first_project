@@ -19,6 +19,7 @@ export class CardComponent {
   @Output()  deleteCard = new EventEmitter<number>();
 
   public getIdCard(id_book : number){
+
       this.deleteCard.emit(id_book);
     }
   }

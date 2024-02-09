@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
+
+  private url: string = "http://localhost:3000";
 
   private book: Book [] = [
     {
@@ -39,34 +42,62 @@ export class BooksService {
     
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  public getAll():Book[]{
-    return this.book;
+  // public getAll():Book[]{
+  //   return this.book;
+  // }
+
+  public getAllApi(){
+    return this.http.get(`${this.url}/books`);
   }
 
-  public add(newBook:Book){
-    this.book.push(newBook);
+  // public add(newBook:Book){
+  //   this.book.push(newBook);
+  // }
+
+  public addBookApi (Book: Book) {
+    return this.http.post(`${this.url}/books`, Book)
   }
 
   public delete(id_book:number){
     const search = this.book.findIndex(book => book.id_book === id_book);
-    this.book.splice(search, 1);
+    if (search !== -1) {
+      this.book.splice(search, 1);
+    }
+  }
+
+  public deleteBookApi (id_book: number){
+    return this.http.delete(`${this.url}/books?id_book=${id_book}`); 
   }
 
  
-  public getOne(id:number):Book[] | [] {
+  // public getOne(id:number):Book[] | [] {
 
-    const book = this.book.find((book) => book.id_book === id);
-    if (book) {
-      return [book];
-    }
-    return [];
+  //   const book = this.book.find((book) => book.id_book === id);
+  //   if (book) {
+  //     return [book];
+  //   }
+  //   return [];
+  // }
+
+  public getOneApi(id_book: number){
+    return this.http.get(`${this.url}/books?id_book=${id_book}`);
+    
   }
+
+  
 
 
   public edit(book : Book ){
     const index = this.book.findIndex(b => b.id_book === book.id_book );
-    this.book[index] = book; 
+    if (index!= -1) {
+      this.book[index] = book; 
+    }
+    
+  }
+
+  public updateApiBook (Book: Book) {
+    return this.http.put(`${this.url}/books?id_book=${Book.id_book}`,Book)
   }
 }

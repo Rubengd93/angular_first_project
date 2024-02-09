@@ -25,8 +25,11 @@ export class AddBookComponent {
         price : parseFloat(price.value),
         photo : link.value,
     }
-    this.booksService.add(newBook);
-    this.router.navigateByUrl("/books")
+    // this.booksService.add(newBook);
+    
+    this.booksService.addBookApi(newBook).subscribe((data) =>{
+      this.router.navigateByUrl("/books")
+    })
   }
 
   ngOnInit(){

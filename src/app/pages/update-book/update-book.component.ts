@@ -26,7 +26,10 @@ export class UpdateBookComponent {
       photo : link.value,
   }
   this.booksService.edit(newBook);
-  this.router.navigateByUrl("/books")
+  
+  this.booksService.updateApiBook(newBook).subscribe((data) => {
+    this.router.navigateByUrl("/books")
+  })
 }
 
 }
